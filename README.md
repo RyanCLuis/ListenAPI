@@ -47,16 +47,30 @@ Podcast is comprised of the following:
     },
     type: {
         type: String,
-        default: "audio",
-    },
-    category: {
-        type: String,
+        enum: [
+            'Culture', 
+            'Business', 
+            'Education', 
+            'Health', 
+            'Comedy', 
+            'News', 
+            'Science', 
+            'History', 
+            'Development', 
+            'Sports', 
+            'Crime', 
+            'Horror', 
+            'Religion '
         default: "comedy",
+        ],
     },
     views: {
         type: Number,
         default: 0,
     },
+    owner: {
+        type: [mongoose.Schema.Types.ObjectId],
+        ref: "User",
     episodes: {
         type: [mongoose.Schema.Types.ObjectId],
         ref: "Episodes",
@@ -83,10 +97,6 @@ Episode is comprised of the following:
     thumbnail: {
         type: String,
         default: "",
-    },
-    type: {
-        type: String,
-        default: "audio",
     },
     duration: {
         type: String,
