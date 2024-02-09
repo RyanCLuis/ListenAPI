@@ -71,6 +71,7 @@ Podcast is comprised of the following:
     owner: {
         type: [mongoose.Schema.Types.ObjectId],
         ref: "User",
+    },
     episodes: {
         type: [mongoose.Schema.Types.ObjectId],
         ref: "Episodes",
