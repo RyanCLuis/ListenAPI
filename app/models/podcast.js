@@ -43,7 +43,7 @@ const podcastSchema = new mongoose.Schema(
         default: 0,
     },
     owner: {
-        type: [mongoose.Schema.Types.ObjectId],
+        type: mongoose.Schema.Types.ObjectId,
         ref: "User",
     },
     episodes: {
