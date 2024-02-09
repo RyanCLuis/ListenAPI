@@ -50,6 +50,10 @@ const podcastSchema = new mongoose.Schema(
         type: [mongoose.Schema.Types.ObjectId],
         ref: "Episodes",
         default: [],
+    },
+    favorite: {
+        type: Boolean,
+        default: false,
     }
     },
     {
