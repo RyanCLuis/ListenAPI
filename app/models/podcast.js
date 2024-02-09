@@ -1,5 +1,7 @@
 const mongoose = require('mongoose')
 
+const episodeSchema = require('./episode')
+
 const podcastSchema = new mongoose.Schema(
 	{
     name: {
@@ -36,24 +38,20 @@ const podcastSchema = new mongoose.Schema(
             'Religion',
             'Music',
         ],
-        default: "comedy",
+        default: "comedy"
     },
     views: {
         type: Number,
         default: 0,
     },
-    owner: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "User",
-    },
-    episodes: {
-        type: [mongoose.Schema.Types.ObjectId],
-        ref: "Episodes",
-        default: [],
-    },
+    episodes: [episodeSchema],
     favorite: {
         type: Boolean,
         default: false,
+    },
+    owner: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
     }
     },
     {

@@ -103,10 +103,6 @@ Episode is comprised of the following:
         type: String,
         default: "",
     },
-    file: {
-        type: String,
-        default: "",
-    },
 },
     { timestamps: true,
      }
