@@ -45,10 +45,6 @@ const podcastSchema = new mongoose.Schema(
         default: 0,
     },
     episodes: [episodeSchema],
-    favorite: {
-        type: Boolean,
-        default: false,
-    },
     owner: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",

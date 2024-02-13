@@ -20,16 +20,6 @@ router.get('/', (req, res, next) => {
 		.catch(next)
 })
 
-// SHOW
-// GET /favorites
-router.get('/favorites', requireToken, (req, res, next) => {
-	Podcast.find({ favorite: true})
-		.then((podcasts) => {
-			return podcasts.map((podcast) => podcast.toObject())
-		})
-		.then((podcasts) => res.status(200).json({ podcasts: podcasts }))
-		.catch(next)
-})
 
 // SHOW
 // GET /5a7db6c74d55bc51bdf39793
