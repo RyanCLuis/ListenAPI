@@ -21,7 +21,11 @@ const episodeSchema = new mongoose.Schema(
         views: {
             type: Number,
             default: 0,
-        }
+        },
+        audio: {
+            type: String,
+            required: true,
+        },
     },
     {
         timestamps: true,

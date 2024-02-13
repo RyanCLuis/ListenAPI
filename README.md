@@ -87,7 +87,7 @@ Podcast is comprised of the following:
 ```js
 Episode is comprised of the following:
 
-    name: {
+    title: {
         type: String,
         required: true,
     },
@@ -102,6 +102,10 @@ Episode is comprised of the following:
     duration: {
         type: String,
         default: "",
+    },
+    audio: {
+        type: String,
+        required: true,
     },
 },
     { timestamps: true,
@@ -129,6 +133,14 @@ Episode is comprised of the following:
 | GET    | `/:id`                 | `podcast#show`    |
 | PATCH  | `/:id`                 | `podcast#update`  |
 | DELETE | `/:id`                 | `podcast#delete`  |
+
+### Episodes
+
+| Verb   | URI Pattern                      | Controller#Action |
+|--------|----------------------------------|-------------------|
+| POST   | `/episodes/:podcastId`           | `episode#create`  |
+| PATCH  | `/episodes/:podcastId/:episodeId`| `episode#update`  |
+| DELETE | `/episodes/:podcastId/:episodeId`| `episode#delete`  |
 
 ### Searches
 
