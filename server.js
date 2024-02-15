@@ -66,9 +66,9 @@ app.use(express.urlencoded({ extended: true }))
 app.use(requestLogger)
 
 // register route files
+app.use(userRoutes)
 app.use(podcastRoutes)
 app.use(episodeRoutes)
-app.use(userRoutes)
 
 // register error handling middleware
 // note that this comes after the route middlewares, because it needs to be
